@@ -13,19 +13,17 @@ export function Todo() {
   const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
+
   const onSubmit = (event) => {
     event.preventDefault();
     if (!inputText) return;
     const date = new Date();
     const createdAt = `${date.getHours()}:${date.getMinutes()}`;
-    setTodoList([
-      ...todoList,
+    setTodoList((prev) => [
+      ...prev,
       { name: inputText, id: generateID(), createdAt },
     ]);
     setInputText("");
-  };
-  const handleRemoveTodo = (todo) => {
-    setTodoList(todoList.filter((t) => t.id !== todo));
   };
 
   return (
@@ -47,8 +45,7 @@ export function Todo() {
           Add
         </Button>
       </Form>
-
-      <TodoList todos={todoList} handleRemoveTodo={handleRemoveTodo} />
+      <TodoList todos={todoList} setTodoList={setTodoList} />
     </div>
   );
 }
