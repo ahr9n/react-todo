@@ -20,7 +20,7 @@ As a to-do user, you can:
 ## Getting Started
 
 After cloning the repository, refer to the project folder and:
-  * Install needed packages to run the app: npm i
-  * Run the app in the development mode: python3 manage.py migrate
+  * Install needed packages to run the app: `npm install`
+  * Run the app in the development mode: `npm start`
   
 _Implemented with nvm@0.39.2, node@18.12.1 and npm@9.1.2_
